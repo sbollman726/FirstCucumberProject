@@ -29,29 +29,43 @@ Feature: Items Management
   Scenario: As a user, I am able to create an item or a service
     When I click on the Add Item button
     Then I should be on item input page
-#   When I provide item information "Books", price 1800, unit "pc", and description "a good book"
-    When I provide item information to the fields
-    | Red Apple | 50000 | box | alot of nice apple |
+		When I provide item information to the specified fields "Tree Bean", price 399322, unit "pc", and description "A Tree Bean"
     And I click Save Item button
     Then The Item is added to the Item list table
+   
+		# Delete Steps   
+    When I delete the item above
+		Then I should not see the item listed
 
   @updateItem
   Scenario: As a user, I am able to update an item or a service
-    When I select the item "Books"
+  	# Create Steps
+  	When I click on the Add Item button
+    Then I should be on item input page
+		When I provide item information to the specified fields "Tree Bean", price 399322, unit "pc", and description "A Tree Bean"
+    And I click Save Item button
+    Then The Item is added to the Item list table
+    
+    # Update Steps
+    When I select the item "Tree Bean"
     Then I should be on item details page
-    When I update the item price to 3000 dollars
+    When I update the item price to 56600 dollars
     And I click Update Item button
-    Then the Item price is updated to 30 dollars
+    Then the Item price is updated to 566 dollars
+    
+    # Delete Steps
+    When I delete the item above
+		Then I should not see the item listed
     
 	@deleteItem
 	Scenario: As a user, I am able to create and delete an item or a service
+		# Create Steps
 		When I click on the Add Item button
 		Then I should be on item input page
 		When I provide item information to the specified fields "Tree Bean", price 399322, unit "pc", and description "A Tree Bean"
 		And I click Save Item button
 		Then The Item is added to the Item list table
-		When I select the checkbox next to specified item
-		And I click on actions dropdown
-		And I click delete
-		And I confrim delete
+		
+		# Delete Steps
+    When I delete the item above
 		Then I should not see the item listed

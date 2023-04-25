@@ -11,7 +11,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1920302400,
+              "duration": 2110201300,
               "status": "passed"
             },
             "line": 25,
@@ -23,7 +23,7 @@
           },
           {
             "result": {
-              "duration": 1616541400,
+              "duration": 1913598800,
               "status": "passed"
             },
             "line": 26,
@@ -36,11 +36,11 @@
         ]
       },
       {
-        "start_timestamp": "2023-04-24T22:17:08.316Z",
+        "start_timestamp": "2023-04-25T22:03:41.135Z",
         "before": [
           {
             "result": {
-              "duration": 1280750100,
+              "duration": 1354070800,
               "status": "passed"
             },
             "match": {
@@ -48,14 +48,14 @@
             }
           }
         ],
-        "line": 47,
-        "name": "As a user, I am able to create and delete an item or a service",
+        "line": 29,
+        "name": "As a user, I am able to create an item or a service",
         "description": "",
-        "id": "items-management;as-a-user--i-am-able-to-create-and-delete-an-item-or-a-service",
+        "id": "items-management;as-a-user--i-am-able-to-create-an-item-or-a-service",
         "after": [
           {
             "result": {
-              "duration": 180397700,
+              "duration": 236019100,
               "status": "passed"
             },
             "match": {
@@ -68,10 +68,10 @@
         "steps": [
           {
             "result": {
-              "duration": 88705600,
+              "duration": 100657000,
               "status": "passed"
             },
-            "line": 48,
+            "line": 30,
             "name": "I click on the Add Item button",
             "match": {
               "location": "step_definitions.itemsManagementSteps.i_click_on_the_add_item_button()"
@@ -80,10 +80,10 @@
           },
           {
             "result": {
-              "duration": 116608900,
+              "duration": 1383530600,
               "status": "passed"
             },
-            "line": 49,
+            "line": 31,
             "name": "I should be on item input page",
             "match": {
               "location": "step_definitions.itemsManagementSteps.i_should_be_on_item_input_page()"
@@ -92,10 +92,10 @@
           },
           {
             "result": {
-              "duration": 1880752500,
+              "duration": 1418168800,
               "status": "passed"
             },
-            "line": 50,
+            "line": 32,
             "name": "I provide item information to the specified fields \"Tree Bean\", price 399322, unit \"pc\", and description \"A Tree Bean\"",
             "match": {
               "arguments": [
@@ -122,10 +122,10 @@
           },
           {
             "result": {
-              "duration": 40861300,
+              "duration": 44850700,
               "status": "passed"
             },
-            "line": 51,
+            "line": 33,
             "name": "I click Save Item button",
             "match": {
               "location": "step_definitions.itemsManagementSteps.i_click_save_item_button()"
@@ -134,10 +134,10 @@
           },
           {
             "result": {
-              "duration": 1800046000,
+              "duration": 1910957500,
               "status": "passed"
             },
-            "line": 52,
+            "line": 34,
             "name": "The Item is added to the Item list table",
             "match": {
               "location": "step_definitions.itemsManagementSteps.the_item_is_added_to_the_item_list_table()"
@@ -146,59 +146,460 @@
           },
           {
             "result": {
-              "duration": 48837200,
+              "duration": 7466273900,
               "status": "passed"
             },
-            "line": 53,
-            "name": "I select the checkbox next to specified item",
+            "line": 37,
+            "name": "I delete the item above",
             "match": {
-              "location": "step_definitions.itemsManagementSteps.i_select_the_checkbox_next_to_specified_item()"
+              "location": "step_definitions.itemsManagementSteps.i_delete_the_item_above()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 188369400,
+              "duration": 995100,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "I should not see the item listed",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.i_should_not_see_the_item_listed()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@itemsTests"
+          },
+          {
+            "name": "@createItem"
+          },
+          {
+            "name": "@smoketest"
+          }
+        ]
+      },
+      {
+        "line": 24,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1982911100,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "As an entity user, I am logged in",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.as_an_entity_user_i_am_logged_in()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1796971100,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "I navigate to Items tab",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.i_navigate_to_items_tab()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-04-25T22:03:59.160Z",
+        "before": [
+          {
+            "result": {
+              "duration": 833450400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step_definitions.CommonHooks.setup()"
+            }
+          }
+        ],
+        "line": 41,
+        "name": "As a user, I am able to update an item or a service",
+        "description": "",
+        "id": "items-management;as-a-user--i-am-able-to-update-an-item-or-a-service",
+        "after": [
+          {
+            "result": {
+              "duration": 215718700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step_definitions.CommonHooks.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 111624600,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "I click on the Add Item button",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.i_click_on_the_add_item_button()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 113627600,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "I should be on item input page",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.i_should_be_on_item_input_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2020001500,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "I provide item information to the specified fields \"Tree Bean\", price 399322, unit \"pc\", and description \"A Tree Bean\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Tree Bean\"",
+                  "offset": 51
+                },
+                {
+                  "val": "399322",
+                  "offset": 70
+                },
+                {
+                  "val": "\"pc\"",
+                  "offset": 83
+                },
+                {
+                  "val": "\"A Tree Bean\"",
+                  "offset": 105
+                }
+              ],
+              "location": "step_definitions.itemsManagementSteps.i_provide_item_information_to_the_specified_fields_price_unit_and_description(java.lang.String,java.lang.Integer,java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 45846600,
+              "status": "passed"
+            },
+            "line": 46,
+            "name": "I click Save Item button",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.i_click_save_item_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1938648900,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "The Item is added to the Item list table",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.the_item_is_added_to_the_item_list_table()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 51827100,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "I select the item \"Tree Bean\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Tree Bean\"",
+                  "offset": 18
+                }
+              ],
+              "location": "step_definitions.itemsManagementSteps.i_select_the_item(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 23916700,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "I should be on item details page",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.i_should_be_on_item_details_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1484889900,
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "I update the item price to 56600 dollars",
+            "match": {
+              "arguments": [
+                {
+                  "val": "56600",
+                  "offset": 27
+                }
+              ],
+              "location": "step_definitions.itemsManagementSteps.i_update_the_item_price_to_dollars(java.lang.Integer)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 55658000,
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "I click Update Item button",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.i_click_update_item_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2047844800,
               "status": "passed"
             },
             "line": 54,
-            "name": "I click on actions dropdown",
+            "name": "the Item price is updated to 566 dollars",
             "match": {
-              "location": "step_definitions.itemsManagementSteps.i_click_on_actions_dropdown()"
+              "arguments": [
+                {
+                  "val": "566",
+                  "offset": 29
+                }
+              ],
+              "location": "step_definitions.itemsManagementSteps.the_item_price_is_updated_to_dollars(java.lang.Integer)"
             },
-            "keyword": "And "
+            "keyword": "Then "
           },
           {
             "result": {
-              "duration": 645187300,
+              "duration": 7384259000,
               "status": "passed"
-            },
-            "line": 55,
-            "name": "I click delete",
-            "match": {
-              "location": "step_definitions.itemsManagementSteps.i_click_delete()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 63785300,
-              "status": "passed"
-            },
-            "line": 56,
-            "name": "I confrim delete",
-            "match": {
-              "location": "step_definitions.itemsManagementSteps.i_confrim_delete()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "error_message": "org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//input[@value\u003d\u00271421\u0027]\"}\n  (Session info: chrome\u003d112.0.5615.138)\nFor documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027DESKTOP-FLJB76T\u0027, ip: \u0027192.168.1.17\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u002717.0.4.1\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 112.0.5615.138, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\\Users\\Samue\\AppData\\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62909}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}\nSession ID: 3129b94b91ea9eb32e9d2cf128bb6a2c\n*** Element info: {Using\u003dxpath, value\u003d//input[@value\u003d\u00271421\u0027]}\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat step_definitions.itemsManagementSteps.i_should_not_see_the_item_listed(itemsManagementSteps.java:171)\r\n\tat ✽.I should not see the item listed(file:///C:/Users/Samue/PrimeTechJavaClass/FirstCucumberProject/./src/test/resources/features/itemsManagement.feature:57)\r\n",
-              "duration": 7060690500,
-              "status": "failed"
             },
             "line": 57,
+            "name": "I delete the item above",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.i_delete_the_item_above()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1004000,
+              "status": "passed"
+            },
+            "line": 58,
+            "name": "I should not see the item listed",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.i_should_not_see_the_item_listed()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression"
+          },
+          {
+            "name": "@itemsTests"
+          },
+          {
+            "name": "@updateItem"
+          }
+        ]
+      },
+      {
+        "line": 24,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 1818654500,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "As an entity user, I am logged in",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.as_an_entity_user_i_am_logged_in()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1820749500,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "I navigate to Items tab",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.i_navigate_to_items_tab()"
+            },
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-04-25T22:04:19.289Z",
+        "before": [
+          {
+            "result": {
+              "duration": 1107965000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step_definitions.CommonHooks.setup()"
+            }
+          }
+        ],
+        "line": 61,
+        "name": "As a user, I am able to create and delete an item or a service",
+        "description": "",
+        "id": "items-management;as-a-user--i-am-able-to-create-and-delete-an-item-or-a-service",
+        "after": [
+          {
+            "result": {
+              "duration": 303980100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "step_definitions.CommonHooks.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 75750500,
+              "status": "passed"
+            },
+            "line": 63,
+            "name": "I click on the Add Item button",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.i_click_on_the_add_item_button()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 118608000,
+              "status": "passed"
+            },
+            "line": 64,
+            "name": "I should be on item input page",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.i_should_be_on_item_input_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2435315500,
+              "status": "passed"
+            },
+            "line": 65,
+            "name": "I provide item information to the specified fields \"Tree Bean\", price 399322, unit \"pc\", and description \"A Tree Bean\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Tree Bean\"",
+                  "offset": 51
+                },
+                {
+                  "val": "399322",
+                  "offset": 70
+                },
+                {
+                  "val": "\"pc\"",
+                  "offset": 83
+                },
+                {
+                  "val": "\"A Tree Bean\"",
+                  "offset": 105
+                }
+              ],
+              "location": "step_definitions.itemsManagementSteps.i_provide_item_information_to_the_specified_fields_price_unit_and_description(java.lang.String,java.lang.Integer,java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 80730700,
+              "status": "passed"
+            },
+            "line": 66,
+            "name": "I click Save Item button",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.i_click_save_item_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2005417300,
+              "status": "passed"
+            },
+            "line": 67,
+            "name": "The Item is added to the Item list table",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.the_item_is_added_to_the_item_list_table()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 7436960500,
+              "status": "passed"
+            },
+            "line": 70,
+            "name": "I delete the item above",
+            "match": {
+              "location": "step_definitions.itemsManagementSteps.i_delete_the_item_above()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 71,
             "name": "I should not see the item listed",
             "match": {
               "location": "step_definitions.itemsManagementSteps.i_should_not_see_the_item_listed()"

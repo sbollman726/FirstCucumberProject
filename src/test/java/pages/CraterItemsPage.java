@@ -1,5 +1,6 @@
 package pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,13 +21,35 @@ public class CraterItemsPage {
 	public void AddItemInfo(String itemname, int itemPrice, String itemUnit, String itemDescription) {
 		utils = new BrowserUtils();
 		addItemName.sendKeys(itemname);
-		itemsPage.addItemPrice.sendKeys(itemUnit.toString());
+		addItemPrice.sendKeys(itemUnit.toString());
 		
 		addItemUnit.click();
-		utils.waitUntilElementVisible(itemsPage.addItem_pc_unit);
+		utils.waitUntilElementVisible(addItem_pc_unit);
 		Driver.getDriver().findElement(By.xpath("//span[text()='"+itemUnit+"']")).click();
 		
 		addItemDescription.sendKeys(itemDescription);
+	}
+	
+	
+	public void deleteItem(String name, String shortValue) throws InterruptedException {
+		utils = new BrowserUtils();
+		utils.waitUntilElementVisible(Driver.getDriver().findElement(By.xpath("//a[text()='"+name+"']")));
+		Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//a[text()='"+name+"']")).isDisplayed());
+		Driver.getDriver().findElement(By.xpath("//input[@value='"+shortValue+"']")).click();
+//		utils.scrollUp(400);
+		
+		utils.waitUntilElementVisible(actionsDropdown);
+//		utils.scrollTo(itemsPageHeaderText);
+		Thread.sleep(5000);
+		actionsDropdown.click();
+		
+		utils.waitUntilElementVisible(itemDeleteDropdown);
+		Thread.sleep(1000);
+		itemDeleteDropdown.click();
+		
+		utils.waitUntilElementVisible(itemConfirmDeleteBTN);
+		Thread.sleep(1000);
+		itemConfirmDeleteBTN.click();
 	}
 	
 	
@@ -70,14 +93,27 @@ public class CraterItemsPage {
 	@FindBy ( xpath = "//button[@type='submit']")
 	public WebElement updateItemButton;
 	
-	@FindBy ( xpath = "//span[@class='flex text-sm font-medium cursor-pointer select-none text-primary-400']")
+	@FindBy( xpath= "//button[text()='Filter ']")
+	public WebElement filterBTN;
+	
+	@FindBy (xpath = "//div[@name='name']")
+	public WebElement filterNameTextField;
+	
+	@FindBy ( xpath = "//span[text()='Actions ']")
 	public WebElement actionsDropdown;
 	
-	@FindBy ( xpath = "//a[@class='text-gray-700 group flex items-center px-4 py-2 text-sm font-normal']")
+	@FindBy ( xpath = "//a[text()=' Delete']")
 	public WebElement itemDeleteDropdown;
 	
 	@FindBy ( xpath = "//button[text()='Ok']")
 	public WebElement itemConfirmDeleteBTN;
+	
+	@FindBy ( xpath = "//svg[@class='w-6 h-6']")
+	public WebElement itemPopUpMess;
+	
+	
+	
+	
 	
 	
 }
