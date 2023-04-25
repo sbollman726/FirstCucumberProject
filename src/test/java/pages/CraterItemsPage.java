@@ -18,16 +18,15 @@ public class CraterItemsPage {
 	}
 	
 	public void AddItemInfo(String itemname, int itemPrice, String itemUnit, String itemDescription) {
-		itemsPage = new CraterItemsPage();
 		utils = new BrowserUtils();
-		itemsPage.addItemName.sendKeys(itemname);
+		addItemName.sendKeys(itemname);
 		itemsPage.addItemPrice.sendKeys(itemUnit.toString());
 		
-		itemsPage.addItemUnit.click();
+		addItemUnit.click();
 		utils.waitUntilElementVisible(itemsPage.addItem_pc_unit);
 		Driver.getDriver().findElement(By.xpath("//span[text()='"+itemUnit+"']")).click();
 		
-		itemsPage.addItemDescription.sendKeys(itemDescription);
+		addItemDescription.sendKeys(itemDescription);
 	}
 	
 	
