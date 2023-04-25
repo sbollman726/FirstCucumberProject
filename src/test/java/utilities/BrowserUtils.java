@@ -29,6 +29,12 @@ public class BrowserUtils {
 		action.sendKeys(element, txt).build().perform();
 	}
 	
+	// click via actions class to the field that is not clickable
+	public void actionsClick(WebElement element) {
+		action = new Actions(Driver.getDriver());
+		action.click().build().perform();
+	}
+	
 	// select by visible text
 	public void selectByVisibleText(WebElement element, String tobeSelectedOptionText) {
 		letsSelect = new Select(element);
@@ -45,6 +51,11 @@ public class BrowserUtils {
 	public void scrollTo(WebElement element) {
 		js = (JavascriptExecutor) Driver.getDriver();
 		js.executeScript("arguments[0].scrollIntoView();", element);	
+	}
+	
+	public void scrollUp(int x) {
+		js = (JavascriptExecutor) Driver.getDriver();
+		js.executeScript("window.scrollBy(0,"+x+")", "");	
 	}
 	
 	public int randonNumber() {
