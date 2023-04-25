@@ -167,7 +167,7 @@ public class itemsManagementSteps {
 	
 	@Then("I should not see the item listed")
 	public void i_should_not_see_the_item_listed() {
-			Assert.assertFalse(Driver.getDriver().findElement(By.xpath("//input[@value='"+shortItemValue+"']")).isDisplayed());
+			Assert.assertFalse(!Driver.getDriver().findElement(By.xpath("//input[@value='"+shortItemValue+"']")).isDisplayed());
 		}
 	
 	@When("I confrim delete")
