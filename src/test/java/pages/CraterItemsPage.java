@@ -18,39 +18,48 @@ public class CraterItemsPage {
 		
 	}
 	
-	public void AddItemInfo(String itemname, int itemPrice, String itemUnit, String itemDescription) {
+	public void createAnItem(String itemName, String itemPrice, String itemUnit, String itemDes) {
 		utils = new BrowserUtils();
-		addItemName.sendKeys(itemname);
-		addItemPrice.sendKeys(itemUnit.toString());
-		
+		addItemName.sendKeys(itemName);
+		addItemPrice.sendKeys(itemPrice);
 		addItemUnit.click();
 		utils.waitUntilElementVisible(addItem_pc_unit);
+//		unitOptions.findElement(
+//				By.xpath(String.format(unitOptions.getAttribute("xpath"), itemUnit))).click();
 		Driver.getDriver().findElement(By.xpath("//span[text()='"+itemUnit+"']")).click();
-		
-		addItemDescription.sendKeys(itemDescription);
+		addItemDescription.sendKeys(itemDes);
+		saveItemButton.click();
 	}
 	
 	
 	public void deleteItem(String name, String shortValue) throws InterruptedException {
-		utils = new BrowserUtils();
-		utils.waitUntilElementVisible(Driver.getDriver().findElement(By.xpath("//a[text()='"+name+"']")));
-		Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//a[text()='"+name+"']")).isDisplayed());
-		Driver.getDriver().findElement(By.xpath("//input[@value='"+shortValue+"']")).click();
-//		utils.scrollUp(400);
-		
-		utils.waitUntilElementVisible(actionsDropdown);
-//		utils.scrollTo(itemsPageHeaderText);
-		Thread.sleep(5000);
-		actionsDropdown.click();
-		
-		utils.waitUntilElementVisible(itemDeleteDropdown);
-		Thread.sleep(1000);
-		itemDeleteDropdown.click();
-		
-		utils.waitUntilElementVisible(itemConfirmDeleteBTN);
-		Thread.sleep(1000);
-		itemConfirmDeleteBTN.click();
-	}
+		Thread.sleep(2000);
+		if (!filterNameTextField.isDisplayed()) {
+			Thread.sleep(10000);
+			utils.waitUntilElementToBeClickable(filterBTN);
+			filterBTN.click();
+			utils.waitUntilElementVisible(filterNameTextField);
+			utils.actionsSendKeys(filterNameTextField, name);
+		}
+				
+				Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//a[text()='"+name+"']")).isDisplayed());
+				
+				utils.waitUntilElementToBeClickable(Driver.getDriver().findElement(By.xpath("//input[@value='"+shortValue+"']")));
+				Driver.getDriver().findElement(By.xpath("//input[@value='"+shortValue+"']")).click();
+				Thread.sleep(2000);
+				
+				utils.waitUntilElementToBeClickable(actionsDropdown);
+				utils.actionsClick(actionsDropdown);
+				Thread.sleep(2000);
+
+				utils.waitUntilElementToBeClickable(itemDeleteDropdown);
+				utils.actionsClick(itemDeleteDropdown);
+				Thread.sleep(2000);
+
+				
+				utils.waitUntilElementToBeClickable(itemConfirmDeleteBTN);
+				utils.actionsClick(itemConfirmDeleteBTN);
+			}
 	
 	
 	@FindBy ( xpath = "//h3[text()='Items']")			//h3[text()='Items']
@@ -108,9 +117,11 @@ public class CraterItemsPage {
 	@FindBy ( xpath = "//button[text()='Ok']")
 	public WebElement itemConfirmDeleteBTN;
 	
-	@FindBy ( xpath = "//svg[@class='w-6 h-6']")
+	@FindBy ( xpath = "//p[text()='Success!']")
 	public WebElement itemPopUpMess;
 	
+	@FindBy (xpath = "//span[text()='No Results Found']")
+	public WebElement filterNoResultFoundMessage;
 	
 	
 	

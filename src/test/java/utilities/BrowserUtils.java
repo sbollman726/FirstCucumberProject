@@ -19,8 +19,20 @@ public class BrowserUtils {
 	
 	// waits for an element to be visable 
 	public void waitUntilElementVisible(WebElement element) {
-		wait = new WebDriverWait(Driver.getDriver(), 5);
+		wait = new WebDriverWait(Driver.getDriver(), 10);
 		wait.until(ExpectedConditions.visibilityOf(element));	
+	}
+	
+	// waits for an element to be gone
+	public void waitUntilElementNotVisible(WebElement element) {
+		wait = new WebDriverWait(Driver.getDriver(), 10);
+		wait.until(ExpectedConditions.invisibilityOfAllElements(element));
+	}
+
+	// waits for an element to be clickable
+	public void waitUntilElementToBeClickable(WebElement element) {
+		wait = new WebDriverWait(Driver.getDriver(), 10);
+		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	
 	// send keys via actions class to the field that is not interactable 
@@ -39,6 +51,18 @@ public class BrowserUtils {
 	public void selectByVisibleText(WebElement element, String tobeSelectedOptionText) {
 		letsSelect = new Select(element);
 		letsSelect.selectByVisibleText(tobeSelectedOptionText);
+	}
+	
+	// select by value
+	public void selectByValue(WebElement selectElement, String value) {
+		letsSelect = new Select(selectElement);
+		letsSelect.selectByValue(value);
+	}
+	
+	// select by index
+	public void selectByIndex(WebElement selectElement, int index) {
+		letsSelect = new Select(selectElement);
+		letsSelect.selectByIndex(index);
 	}
 	
 	// return the selected option from dropdown
@@ -64,6 +88,14 @@ public class BrowserUtils {
 		return randomNum;
 	}
 	
+	public boolean isElementPresent(WebElement element) {
+		try {
+			element.isDisplayed();
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			return false;
+		}
+		return true;
+	}
 	
 	
 	
