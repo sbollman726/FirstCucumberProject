@@ -26,7 +26,7 @@ Feature: Items Management
     Given As an entity user, I am logged in
     And I navigate to Items tab
 
-  @createItem @smoketest
+  @createItem @smokeTest
   Scenario: As a user, I am able to create an item or a service
     When I click on the Add Item button
     Then I should be on item input page
@@ -54,7 +54,7 @@ Feature: Items Management
     Then The item is no longer in the items list table
     
     
-  @createItemWithDataTable @smoketest
+  @createItemWithDataTable @smokeTest
   Scenario: As a user, I am able to create an item or a service
     When I click on the Add Item button
     Then I should be on item input page
